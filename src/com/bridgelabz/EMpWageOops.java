@@ -1,7 +1,7 @@
 package com.bridgelabz;
 public class EMpWageOops {
 	
-	//UC-6 case
+	//uc -7
 	
 	 public static final int absent = 0;
 	    public static final int fullTime = 1;
@@ -11,6 +11,16 @@ public class EMpWageOops {
 	    public static final int hours_in_month = 100;
 
 	    public static void main(String args[]) {
+	        //Calculation of total working hours of the employee
+	        int calculatedTotalWorkingHours = calculateWorkinghours();
+
+	        //Calculation of the total wages of the employee
+	        int totalEmpWage = totalEmpWage(calculatedTotalWorkingHours);
+
+	        //Print the total wage
+	        System.out.println("Wages per month of the employee is : Rs." +totalEmpWage);
+	    }
+	    private static int calculateWorkinghours() {
 	        int empHour = 0;
 	        int totalWorkingHours = 0;
 	        for(int i=1;i<=no_of_days;i++) {
@@ -30,7 +40,10 @@ public class EMpWageOops {
 	            if(totalWorkingHours >= hours_in_month)
 	                break;
 	        }
+	        return totalWorkingHours;
+	    }
+	    private static int totalEmpWage(int totalWorkingHours) {
 	        int totalEmpWage = (empWagePerHour * totalWorkingHours);
-	        System.out.println("Wages per month of the employee is : Rs." +totalEmpWage);
+	        return totalEmpWage;
 	    }
 	}
